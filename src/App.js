@@ -12,9 +12,8 @@ import oportunidadeFoto from "./media/oportunidades.jpg"
 import Header from "./components/Header"
 import Apresentacao from "./components/Apresentacao"
 import Noticias from "./components/Noticias"
-//import Investigacao from "./components/Investigacao"
+import Investigacao from "./components/Investigacao"
 import Footer from "./components/Footer"
-
 
 function App() {
   return (
@@ -26,6 +25,8 @@ function App() {
           <Apresentacao/>
           <hr className="linebreak"></hr>
           <Noticias/>
+          <hr className="linebreak"></hr>
+          <Investigacao/>
         </main>
         <Footer/>  
       </div>
