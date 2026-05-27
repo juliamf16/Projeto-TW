@@ -1,4 +1,9 @@
 /* ===== HEADER ===== */
+
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     font-family: 'Poppins', sans-serif;
     display: flex;
