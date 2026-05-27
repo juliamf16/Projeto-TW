@@ -1,0 +1,91 @@
+/* ===== OPORTUNIDADES ===== */
+.oportunidades {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    scroll-margin-top: 133px;
+}
+
+.oportunidades h1 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #0f9d58;
+}
+
+.oportunidades-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.oportunidades-img {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.oportunidades-img img {
+    margin: 40px;
+    margin-left: 100px;
+    width: 60%;
+    display: block;
+}
+
+.oportunidades-content {
+    padding-right: 100px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 100%;
+}
+
+/* Tabela */
+.tabela-content {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.tabela-oportunidades {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.tabela-oportunidades th {
+    background-color: #f8f9fa;
+    text-align: left;
+    padding: 15px;
+    font-weight: 1200;
+    border-bottom: 2px solid #edf2f7;
+}
+
+.tabela-oportunidades td {
+    padding: 15px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.tabela-oportunidades tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+.status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.status.aberta {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status.fechada {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
