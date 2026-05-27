@@ -1,4 +1,9 @@
 /* ===== HEADER ===== */
+
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -11,7 +16,7 @@ header {
     background-color: #ffffff;
     color: #333333;
     border-bottom: 1px solid #000000;
-    z-index: 100;
+    z-index: 100;;
 }
 
 .logo img {

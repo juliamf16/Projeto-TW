@@ -1,0 +1,42 @@
+/* ===== APRESENTACAO ===== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== APRESENTAÇÃO ===== */
+.apresentacao {
+    scroll-margin-top: 145px;
+}
+
+.banner img {
+    width: 100%;
+    height: 600px;
+    display: block;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: top;
+}
+
+.texto {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .banner img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 375px) {
+    .banner img {
+        height: 200px;
+    }
+}
