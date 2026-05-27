@@ -18,7 +18,11 @@ import Header from "./components/Header"
 
 function App() {
   return (
-      <Header/>
+    <body>
+      <div class="container">
+        <Header/>
+      </div>
+    </body>
   );
 }
 
