@@ -10,17 +10,21 @@ import hdes from "./media/HDES-2.png"
 import usism from "./media/USISM-2.png"
 import inova from "./media/INOVA-2.png"
 import oportunidadeFoto from "./media/oportunidades.jpg"
-import facebookLogo from "./media/fb.png"
-import instagramLogo from "./media/ig.png"
-import linkedinLogo from "./media/linkedIn.png"
+
 
 import Header from "./components/Header"
+import Apresentacao from "./components/Apresentacao"
+import Footer from "./components/Footer"
+
 
 function App() {
   return (
     <body>
       <div class="container">
-        <Header/>
+        <main>
+          <Header/>
+        </main>
+        <Footer/>  
       </div>
     </body>
   );

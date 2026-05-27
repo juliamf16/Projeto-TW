@@ -999,60 +999,6 @@ main {
     color: red;
 }
 
-/* ===== FOOTER ===== */
-footer {
-    background-color: #0A1F44;
-    color: #E6EEF8;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
-    padding: 10px 50px;
-    flex-wrap: wrap;
-    font-family: 'Source Sans 3', sans-serif;
-}
-
-.footer_copyright p {
-    margin: 0;
-}
-
-.footer_socialmedia img {
-    text-decoration: none;
-    height: 24px;
-    width: 24px;
-}
-
-.footer_socialmedia a,
-.footer_socialmedia a:visited,
-.footer_socialmedia a:hover,
-.footer_socialmedia a:active {
-    text-decoration: none;
-    border: none;
-    outline: none;
-}
-
-.footer_course a,
-.footer_course a:visited,
-.footer_course a:hover,
-.footer_course a:active,
-.footer_course a:focus,
-.footer_privacy a,
-.footer_privacy a:visited,
-.footer_privacy a:hover,
-.footer_privacy a:active {
-    color: #E6EEF8;
-    text-decoration: none;
-    outline: none;
-}
-
-.footer_course p {
-    margin: 5px 0;
-}
-
-.footer_privacy p {
-    margin: 0;
-}
-
 /* ===== TOAST ===== */
 .toast {
     position: fixed;
