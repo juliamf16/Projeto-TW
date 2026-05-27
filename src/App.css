@@ -83,25 +83,6 @@ main {
     text-align: center;
 }
 
-/* ===== APRESENTAÇÃO ===== */
-.apresentacao {
-    scroll-margin-top: 145px;
-}
-
-.banner img {
-    width: 100%;
-    height: 600px;
-    display: block;
-    overflow: hidden;
-    object-fit: cover;
-    object-position: top;
-}
-
-.texto {
-    margin-top: 20px;
-    line-height: 1.6;
-}
-
 /* ===== LINE BREAK ===== */
 .linebreak {
     width: 100%;
@@ -311,46 +292,7 @@ main {
     background-color: #0c7c45;
 }
 
-/* ===== INVESTIGAÇÃO ===== */
-.investigacao {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: center;
-    scroll-margin-top: 133px;
-}
 
-.investigacao h1 {
-    font-family: 'Poppins', sans-serif;
-    color: #0f9d58;
-}
-
-.investigacao h3 {
-    font-family: 'Poppins', sans-serif;
-    color: #0f9d58;
-}
-
-.grid-investigacao {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-}
-
-.grid-box-investigacao p {
-    text-align: justify;
-}
-
-.grid-box-investigacao a {
-    cursor: pointer;
-    color: #1a73e8;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.texto-extra {
-    text-align: justify;
-    margin-top: 15px;
-    display: none;
-}
 
 /* ===== SECÇÃO DE EVENTOS ===== */
 
@@ -997,60 +939,6 @@ main {
     font-size: 12px;
     min-height: 20px;
     color: red;
-}
-
-/* ===== FOOTER ===== */
-footer {
-    background-color: #0A1F44;
-    color: #E6EEF8;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
-    padding: 10px 50px;
-    flex-wrap: wrap;
-    font-family: 'Source Sans 3', sans-serif;
-}
-
-.footer_copyright p {
-    margin: 0;
-}
-
-.footer_socialmedia img {
-    text-decoration: none;
-    height: 24px;
-    width: 24px;
-}
-
-.footer_socialmedia a,
-.footer_socialmedia a:visited,
-.footer_socialmedia a:hover,
-.footer_socialmedia a:active {
-    text-decoration: none;
-    border: none;
-    outline: none;
-}
-
-.footer_course a,
-.footer_course a:visited,
-.footer_course a:hover,
-.footer_course a:active,
-.footer_course a:focus,
-.footer_privacy a,
-.footer_privacy a:visited,
-.footer_privacy a:hover,
-.footer_privacy a:active {
-    color: #E6EEF8;
-    text-decoration: none;
-    outline: none;
-}
-
-.footer_course p {
-    margin: 5px 0;
-}
-
-.footer_privacy p {
-    margin: 0;
 }
 
 /* ===== TOAST ===== */
