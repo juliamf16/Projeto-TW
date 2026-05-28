@@ -1,0 +1,113 @@
+/* ===== LOGIN PAGE ===== */
+.login-header {
+    background-color: #f2f6fc;
+    border-bottom: 1px solid #000000;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+.login-header .logo img {
+    height: 70px;
+    margin-top: 10px;
+}
+
+.login-page {
+    background-image: url('../components/Apresentacao/media/universidade.png'); /* caminho para a tua imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Source Sans 3', sans-serif;
+    padding: 20px;
+    min-height: calc(100vh - 170px);
+}
+
+.login-box {
+    background: white;
+    border-radius: 16px;
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-page h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #0a5593;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.login-page input {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    background-color: white;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+.login-page input:focus {
+    border-color: #1c75bc;
+    box-shadow: 0 0 0 3px rgba(28, 117, 188, 0.15);
+}
+
+.login-page input::placeholder {
+    color: #aaa;
+}
+
+.login-page button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 5px;
+}
+
+.login-page button[type="submit"]:hover {
+    background-color: rgb(0, 68, 124);
+}
+
+.login-page p {
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-page p a {
+    color: #1c75bc;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-page p a:hover {
+    text-decoration: underline;
+}
