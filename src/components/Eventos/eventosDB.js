@@ -1,7 +1,5 @@
-// componentes/Eventos/eventosDB.js
 import { db } from "../../js/indexeddb";
 
-// Função que aguarda até que a BD esteja inicializada
 const ensureDB = () => {
     return new Promise((resolve) => {
         if (db.db) {

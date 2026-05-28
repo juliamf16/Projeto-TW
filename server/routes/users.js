@@ -4,7 +4,7 @@ const User = require('../models/User');
 const authMiddleware = require('../middleware/auth');
 const router = express.Router();
 
-const JWT_SECRET = process.env.JWT_SECRET || 'segredo-muito-secreto';
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // Middleware para verificar se é admin
 const isAdmin = async (req, res, next) => {
@@ -41,28 +41,6 @@ router.put('/me', authMiddleware, async (req, res) => {
         res.json({ message: 'Perfil atualizado', user: { id: user._id, nome: user.nome, email: user.email, role: user.role } });
     } catch (err) {
         res.status(500).json({ message: 'Erro ao atualizar perfil' });
-    }
-});
-
-// (Opcional) Ver qualquer perfil (apenas admin)
-router.get('/:id', authMiddleware, isAdmin, async (req, res) => {
-    const user = await User.findById(req.params.id).select('-password');
-    if (!user) return res.status(404).json({ message: 'Utilizador não encontrado' });
-    res.json(user);
-});
-
-// (Opcional) Editar qualquer utilizador (apenas admin)
-router.put('/:id', authMiddleware, isAdmin, async (req, res) => {
-    const { nome, email, role } = req.body;
-    try {
-        const user = await User.findById(req.params.id);
-        if (nome) user.nome = nome;
-        if (email) user.email = email;
-        if (role && ['user', 'admin'].includes(role)) user.role = role;
-        await user.save();
-        res.json({ message: 'Utilizador atualizado' });
-    } catch (err) {
-        res.status(500).json({ message: 'Erro ao atualizar' });
     }
 });
 

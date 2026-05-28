@@ -14,12 +14,20 @@
 .eventos-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    max-width: 1200px;
+    gap: 100px;
+    margin: 50px 100px;
+}
+
+.eventos-container.lista-apenas {
+    grid-template-columns: 1fr;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-/* FormulÃ¡rio de Eventos */
+.eventos-container.lista-apenas .eventos-lista {
+    width: 100%;
+}
+
 .eventos-formulario {
     background: #f9f9f9;
     padding: 30px;
@@ -165,11 +173,6 @@
     flex-direction: column;
     position: relative;
     overflow: visible; 
-}
-
-.evento-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px);
 }
 
 .evento-header {
