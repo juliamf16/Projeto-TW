@@ -274,9 +274,43 @@ function EventoCard({ evento, isAdmin, onEditar, onRemover }) {
             </div>
 
             <div className="evento-weather">
-                {loadingWeather ? <span>A carregar previsão...</span> : previsao ? (
-                    <div className="weather-card"> {/* ... detalhes da previsão ... */} </div>
-                ) : <span>Previsão indisponível</span>}
+                {loadingWeather ? (
+                    <span>A carregar previsão...</span>
+                ) : previsao ? (
+                    <div className="weather-card">
+                        <div className="weather-titulo">
+                            <div className="weather-sumario">
+                                <img src={`https://openweathermap.org/img/wn/${previsao.icon}.png`} alt="clima" />
+                                {previsao.description}
+                            </div>
+                            <div className="weather-temp">
+                                {previsao.temp}°C (Sensação: {previsao.feels_like}°C)
+                            </div>
+                        </div>
+                        <div className="weather-body">
+                            <div className="weather-details-grid">
+                                <div className="weather-detail-item">
+                                    <span className="detail-label">💧 Humidade</span>
+                                    <span className="detail-value">{previsao.humidity}%</span>
+                                </div>
+                                <div className="weather-detail-item">
+                                    <span className="detail-label">🌬️ Vento</span>
+                                    <span className="detail-value">{previsao.wind} m/s</span>
+                                </div>
+                                <div className="weather-detail-item">
+                                    <span className="detail-label">🌊 Nível do Mar</span>
+                                    <span className="detail-value">{previsao.sea_level} m</span>
+                                </div>
+                                <div className="weather-detail-item">
+                                    <span className="detail-label">⏲️ Pressão</span>
+                                    <span className="detail-value">{previsao.pressure} hPa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    <span>Previsão indisponível para esta data/hora</span>
+                )}
             </div>
 
             <div className="evento-info">
