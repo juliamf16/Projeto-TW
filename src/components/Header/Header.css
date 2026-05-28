@@ -8,7 +8,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0px 30px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    gap: 12px;
     position: sticky;
     top: 0;
     background-color: #ffffff;
@@ -22,6 +23,20 @@ header {
     margin-top: 10px;
     margin-bottom: 0px;
     overflow: hidden;
+}
+
+.logo {
+    flex: 0 0 auto;
+    order: 1;
+}
+
+.navbar {
+    flex: 1 1 auto;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: flex-end;
+    order: 3;
 }
 
 .navbar {
@@ -48,6 +63,7 @@ header {
     width: 30px;
     height: 21px;
     cursor: pointer;
+    order: 2;
 }
 
 .hamburger-line {
@@ -174,5 +190,34 @@ header {
     }
     .navbar a:last-child {
         border-bottom: none;
+    }
+}
+
+/* Small screen tweaks: reduce logo and keep hamburger on same line */
+@media (max-width: 480px) {
+    header {
+        padding: 8px 12px;
+    }
+
+    .logo img {
+        height: 50px;
+        margin-top: 6px;
+    }
+
+    .hamburger {
+        order: 2;
+    }
+
+    .navbar {
+        order: 3;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    /* Ensure navbar hidden by default on very small screens */
+    .navbar {
+        display: none;
     }
 }

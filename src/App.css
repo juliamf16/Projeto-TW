@@ -1,6 +1,32 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
 main {
     margin: 50px 100px;
     font-family: 'Source Sans 3', sans-serif;
+}
+
+@media (max-width: 1024px) {
+    main {
+        margin: 40px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        margin: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        margin: 18px 14px;
+    }
 }
 
 .linebreak {

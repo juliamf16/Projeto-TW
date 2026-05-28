@@ -22,6 +22,7 @@
     display: flex;
     align-items: center;
     height: 100%;
+    width: 75%;
 }
 
 .oportunidades-img img {
@@ -133,15 +134,15 @@
         font-size: 12px;
     }
 
+}
 
 @media (max-width: 480px) {
     .oportunidades-img img { width: 100%; max-width: 100%; margin: 0; }
     .oportunidades-content { padding: 12px; }
-    .tabela-oportunidades { min-width: 460px; }
+    .tabela-oportunidades { min-width: 320px; overflow-x: auto; }
     .tabela-oportunidades th,
     .tabela-oportunidades td { padding: 8px; font-size: 13px; }
     .status { padding: 3px 8px; font-size: 12px; }
-}
 }
 
 

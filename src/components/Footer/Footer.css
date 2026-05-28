@@ -16,6 +16,18 @@ footer {
     font-family: 'Source Sans 3', sans-serif;
 }
 
+@media (max-width: 768px) {
+    footer {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 10px 12px;
+    }
+}
+
 .footer_copyright p {
     margin: 0;
 }
