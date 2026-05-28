@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import { db } from "./js/indexeddb.js";
 
+
 function App() {
   document.addEventListener('DOMContentLoaded', function () {
       botaoTopo();

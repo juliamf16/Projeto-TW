@@ -1,8 +1,10 @@
 import "./Header.css"
 import mediaLogo from "./media/logo.png"
 import userLogo from "./media/user_logo.png"
+import React, { useEffect } from "react";
 
 export default function Header() {
+
     useEffect(() => {
         fecharMenuHamburger();
     }, []);
@@ -14,6 +16,7 @@ export default function Header() {
             });
         });
     }
+
     return (
         <header>
             <div className="logo">
