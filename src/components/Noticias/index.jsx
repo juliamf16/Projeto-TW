@@ -274,14 +274,16 @@ export default function Noticias() {
                             <div className="grid-noticias">
                                 <div className="grid-box-imagem"><img src={palestrante} alt="Palestrante" /></div>
                                 <div className="grid-box-texto">
-                                    <p><strong>Programa</strong><br /><br />
-                                        09:00 - 09:15 | Sessão de Abertura<br />
-                                        09:15 - 10:00 | Exercício físico como ferramenta de promoção da saúde mental<br />
-                                        10:00 - 10:45 | Atividade física e prevenção da ansiedade e depressão<br />
-                                        10:45 - 11:15 | Pausa para Café<br />
-                                        11:15 - 11:45 | Mesa Redonda<br />
-                                        11:45 - 12:15 | Discussão Aberta<br />
-                                        12:15 - 12:30 | Sessão de Encerramento<br /><br />
+                                    <p><strong>Programa</strong><br></br><br></br>
+                                        09:00 - 09:15 | Sessão de Abertura<br></br>
+                                        09:15 - 10:00 | Exercício físico como ferramenta de promoção da saúde mental<br></br>
+                                        10:00 - 10:45 | Atividade física e prevenção da ansiedade e depressão<br></br>
+                                        10:45 - 11:15 | Pausa para Café<br></br>
+                                        11:15 - 11:45 | Mesa Redonda<br></br>
+                                        Debate sobre estratégias para incentivar estilos de vida ativos<br></br>
+                                        11:45 - 12:15 | Discussão Aberta<br></br>
+                                        Perguntas do público e partilha de experiências<br></br>
+                                        12:15 - 12:30 | Sessão de Encerramento<br></br><br></br>
                                         Aberto à comunidade académica e ao público geral
                                     </p>
                                 </div>
