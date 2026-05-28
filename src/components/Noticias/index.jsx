@@ -324,9 +324,7 @@ export default function Noticias() {
                         </div>
                     </div>
                 </div>
-
                 <button className="carrossel-btn next" aria-label="Notícia seguinte" onClick={nextSlide}>  ❯  </button>
-
                 <div className="carrossel-indicadores">
                     {[0, 1, 2].map(idx => (
                         <span key={idx} className={`indicador ${currentSlide === idx ? "active" : ""}`} onClick={() => goToSlide(idx)} />
