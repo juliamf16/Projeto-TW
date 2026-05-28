@@ -1,4 +1,4 @@
-.eventos {
+﻿.eventos {
     margin-top: 30px;
     margin-bottom: 30px;
     text-align: center;
@@ -14,12 +14,20 @@
 .eventos-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    max-width: 1200px;
+    gap: 100px;
+    margin: 50px 100px;
+}
+
+.eventos-container.lista-apenas {
+    grid-template-columns: 1fr;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-/* Formulário de Eventos */
+.eventos-container.lista-apenas .eventos-lista {
+    width: 100%;
+}
+
 .eventos-formulario {
     background: #f9f9f9;
     padding: 30px;
@@ -34,6 +42,8 @@
 
 .form-group {
     margin-bottom: 20px;
+    justify-self: center;
+    width: 100%;
 }
 
 .form-group label {
@@ -67,7 +77,7 @@
 }
 
 .local-evento {
-    width:105%;
+    width: 105%;
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -163,11 +173,6 @@
     flex-direction: column;
     position: relative;
     overflow: visible; 
-}
-
-.evento-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px);
 }
 
 .evento-header {
@@ -337,3 +342,70 @@
     font-size: 15px;
     word-break: break-word;
 }
+
+@media (max-width: 1024px) {
+    .eventos-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .evento-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .weather-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .eventos-formulario {
+        width: 100%;
+        justify-self: center;
+    }
+
+    .form-buttons {
+        gap: 8px;
+    }
+
+    .btn-submit,
+    .btn-cancelar {
+        font-size: 0.95rem;
+    }
+
+    .weather-card {
+        max-width: 100%;
+        margin: 20px auto;
+    }
+
+    .event-details-grid {
+        grid-template-columns: 1fr;
+        padding: 12px;
+    }
+
+    .event-detail-item {
+        padding: 10px 12px;
+    }
+
+}   
+
+/* Small phones (iPhone 12/13 Pro) */
+@media (max-width: 420px) {
+    .eventos { padding: 8px 10px; }
+    .eventos-container { grid-template-columns: 1fr; gap: 14px; }
+    .eventos-formulario { padding: 16px 12px; }
+    .form-buttons { flex-direction: column; gap: 8px; }
+    .btn-submit, .btn-cancelar { width: 100%; padding: 12px; }
+    .weather-card { max-width: 100%; margin: 12px 0; }
+    .mapa-container { min-height: 180px; }
+    .event-details-grid { grid-template-columns: 1fr; padding: 10px; }
+    .evento-header { flex-direction: column; gap: 8px; }
+    .evento-actions { justify-content: flex-start; gap: 8px; }
+}
+
