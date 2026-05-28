@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import "./Contactos.css";
 
 const eEmailValido = (email) => {
@@ -195,16 +196,31 @@ export default function Contactos() {
 			setToast({ message: "Por favor corrija os erros no formulário.", type: "error" });
 			return;
 		}
-		setToast({ message: "Mensagem enviada com sucesso!", type: "success" });
-		setFormData({
-			nome: "",
-			email: "",
-			telemovel: "",
-			indicativo: "+351",
-			assunto: "default",
-			mensagem: "",
-		});
-		setErrors({});
+		try {
+			// Enviar para o backend
+			await axios.post('/api/contact', {
+				nome: formData.nome,
+				email: formData.email,
+				telemovel: formData.telemovel,
+				indicativo: formData.indicativo,
+				assunto: formData.assunto,
+				mensagem: formData.mensagem
+			});
+			setToast({ message: "Mensagem enviada com sucesso!", type: "success" });
+			// Limpar formulário
+			setFormData({
+				nome: "",
+				email: "",
+				telemovel: "",
+				indicativo: "+351",
+				assunto: "default",
+				mensagem: "",
+			});
+			setErrors({});
+		} catch (err) {
+			console.error(err);
+			setToast({ message: "Erro ao enviar mensagem. Tente novamente.", type: "error" });
+		}
 	};
 
 	return (
