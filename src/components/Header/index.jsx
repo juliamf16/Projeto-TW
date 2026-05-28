@@ -1,6 +1,6 @@
 import "./Header.css"
-import { useEffect } from "react"
 import mediaLogo from "./media/logo.png"
+import userLogo from "./media/user_logo.png"
 
 export default function Header() {
     useEffect(() => {
@@ -36,6 +36,9 @@ export default function Header() {
                 <a href="#parceiros">Parceiros</a>
                 <a href="#oportunidades">Oportunidades</a>
                 <a href="#contactos">Contactos</a>
+                <button className="btn-login">
+                    <img src={userLogo} alt="Logo de utilizador"></img>Iniciar sessão
+                </button>
             </nav>
         </header>
     );
