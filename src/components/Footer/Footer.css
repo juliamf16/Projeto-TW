@@ -20,8 +20,15 @@ footer {
     margin: 0;
 }
 
+.footer_socialmedia {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
 .footer_socialmedia img {
-    text-decoration: none;
+    display: block;
     height: 24px;
     width: 24px;
 }
@@ -30,6 +37,9 @@ footer {
 .footer_socialmedia a:visited,
 .footer_socialmedia a:hover,
 .footer_socialmedia a:active {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
     text-decoration: none;
     border: none;
     outline: none;

@@ -1,4 +1,4 @@
-.eventos {
+﻿.eventos {
     margin-top: 30px;
     margin-bottom: 30px;
     text-align: center;
@@ -19,7 +19,7 @@
     margin: 0 auto;
 }
 
-/* Formulário de Eventos */
+/* FormulÃ¡rio de Eventos */
 .eventos-formulario {
     background: #f9f9f9;
     padding: 30px;
@@ -67,7 +67,7 @@
 }
 
 .local-evento {
-    width:105%;
+    width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -337,3 +337,54 @@
     font-size: 15px;
     word-break: break-word;
 }
+
+@media (max-width: 1024px) {
+    .eventos-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .evento-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .weather-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .eventos-formulario {
+        padding: 20px 16px;
+    }
+
+    .form-buttons {
+        gap: 8px;
+    }
+
+    .btn-submit,
+    .btn-cancelar {
+        font-size: 0.95rem;
+    }
+
+    .weather-card {
+        max-width: 100%;
+        margin: 20px auto;
+    }
+
+    .event-details-grid {
+        grid-template-columns: 1fr;
+        padding: 12px;
+    }
+
+    .event-detail-item {
+        padding: 10px 12px;
+    }
+}
+

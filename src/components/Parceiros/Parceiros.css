@@ -1,4 +1,4 @@
-/* ===== PARCEIROS ===== */
+﻿/* ===== PARCEIROS ===== */
 .parceiros {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -109,3 +109,16 @@
 .grid-parceiros .grid-box:focus:not(:focus-visible) {
     outline: none;
 }
+
+@media (max-width: 1024px) {
+    .grid-parceiros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-parceiros {
+        grid-template-columns: 1fr;
+    }
+}
+
