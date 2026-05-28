@@ -1,4 +1,5 @@
 import "./Header.css"
+import { useEffect } from "react"
 import mediaLogo from "./media/logo.png"
 import userLogo from "./media/user_logo.png"
 
