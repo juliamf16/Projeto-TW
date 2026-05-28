@@ -208,4 +208,4 @@ class DatabaseCACA {
 }
 
 // Criar instância global
-const db = new DatabaseCACA();
+export const db = new DatabaseCACA();

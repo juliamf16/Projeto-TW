@@ -1,15 +1,11 @@
-// ==================== DNA 3D NI NEWSLETTER- MÓDULO AUXILIAR ====================
-
-import THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"
+import * as THREE from "three";
 
 /**
- * Configura o DNA em 3D.
- * @param {None} - Esta função não recebe parâmetros.
- * @returns {Object} Objeto com scene, camera, renderer, dnaGroup e container.
+ * Configura o DNA 3D num container específico.
+ * @param {HTMLElement} container - Elemento DOM onde o canvas será anexado.
+ * @returns {Object} Componentes necessários para construir e animar o DNA.
  */
-export function setupDNA3D() {
-    const container = document.getElementById('dna-container');
-
+export function setupDNA3D(container) {
     const blue = 0x84D0F0;
     const yellow = 0xFED162;
     const purple = 0x651E59;
@@ -33,7 +29,6 @@ export function setupDNA3D() {
     const dnaGroup = new THREE.Group();
 
     return {
-        container,
         scene,
         camera,
         renderer,
@@ -42,14 +37,14 @@ export function setupDNA3D() {
         ballGeometry,
         blueMaterial,
         yellowMaterial,
-        purpleMaterial
+        purpleMaterial,
+        container, // guardamos para redimensionamento
     };
 }
 
 /**
- * Cria a estrutura do DNA com 20 camadas
- * @param {Object} components - Componentes para a estrutura (dnaGroup, tubeGeometry, ballGeometry, blueMaterial, yellowMaterial, purpleMaterial)
- * @returns {Object} dnaGroup com a estrutura completa
+ * Cria a estrutura helicoidal do DNA (20 camadas).
+ * @param {Object} components - Retornado por setupDNA3D.
  */
 export function criarEstruturaDNA(components) {
     const { dnaGroup, tubeGeometry, ballGeometry, blueMaterial, yellowMaterial, purpleMaterial } = components;
@@ -59,11 +54,11 @@ export function criarEstruturaDNA(components) {
         const yPos = i * 2 - 20;
 
         const blueTube = new THREE.Mesh(tubeGeometry, blueMaterial);
-        blueTube.rotation.z = Math.PI/2;
+        blueTube.rotation.z = Math.PI / 2;
         blueTube.position.set(-3, 0, 0);
 
         const yellowTube = new THREE.Mesh(tubeGeometry, yellowMaterial);
-        yellowTube.rotation.z = Math.PI/2;
+        yellowTube.rotation.z = Math.PI / 2;
         yellowTube.position.set(3, 0, 0);
 
         const ballLeft = new THREE.Mesh(ballGeometry, purpleMaterial);
@@ -83,36 +78,41 @@ export function criarEstruturaDNA(components) {
 }
 
 /**
- * Faz a animação do DNA
- * @param {Object} components - Componentes da estrutura (dnaGroup, renderer, scene, camera).
- * @returns {Function} Função da animação.
+ * Inicia a animação de rotação do DNA.
+ * @param {Object} components - Deve conter dnaGroup, renderer, scene, camera.
+ * @returns {Function} Função para cancelar a animação.
  */
 export function iniciarAnimacaoDNA(components) {
     const { dnaGroup, renderer, scene, camera } = components;
+    let animationId;
 
     function animate() {
-        requestAnimationFrame(animate);
+        animationId = requestAnimationFrame(animate);
         dnaGroup.rotation.x += 0.005;
         dnaGroup.rotation.y += 0.01;
         renderer.render(scene, camera);
     }
     animate();
 
-    return animate;
+    return () => cancelAnimationFrame(animationId);
 }
 
 /**
- * Configura o redimensionamento responsivo
- * @param {Object} components - Componentes da estrutura (container, camera, renderer)
+ * Torna o DNA responsivo ao redimensionamento da janela.
+ * @param {Object} components - Deve conter container, camera, renderer.
+ * @returns {Function} Função de cleanup para remover o event listener.
  */
 export function configurarRedimensionamentoDNA(components) {
     const { container, camera, renderer } = components;
 
-    window.addEventListener('resize', () => {
+    const handleResize = () => {
         const width = container.clientWidth;
         const height = container.clientHeight;
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
         renderer.setSize(width, height);
-    });
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
 }
