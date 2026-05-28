@@ -1,3 +1,5 @@
+/* ===== HEADER ===== */
+
 html {
     scroll-behavior: smooth;
 }
@@ -14,7 +16,7 @@ header {
     background-color: #ffffff;
     color: #333333;
     border-bottom: 1px solid #000000;
-    z-index: 100;
+    z-index: 100;;
 }
 
 .logo img {
@@ -27,7 +29,7 @@ header {
 .navbar {
     display: flex;
     gap: 30px;
-    align-items: center;
+    align-items: center;  /* adiciona isto */
 }
 
 .navbar a {
@@ -47,7 +49,6 @@ header {
     justify-content: space-between;
     width: 30px;
     height: 21px;
-    cursor: pointer;
 }
 
 .hamburger-line {
@@ -82,7 +83,7 @@ header {
     background-color: #bee0fd;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1024px) {
     .hamburger {
         display: flex;
     }
@@ -96,13 +97,11 @@ header {
         background-color: #f2f2f2;
         flex-direction: column;
         align-items: center;
+        padding: 20px 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         z-index: 999;
         gap: 0;
-    }
-
-    .menu-toggle:checked ~ .navbar {
-        display: flex;
+        overflow-x: hidden;
     }
 
     .navbar a {
@@ -117,37 +116,20 @@ header {
         border-bottom: none;
     }
 
-    .navbar .btn-login {
-        width: 100%;
-        justify-content: center;
-        margin: 10px 0;
-        background-color: transparent;
-        color: #1a73e8;
-        font-weight: bold;
-        padding: 15px 20px;
-        border-radius: 0;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .navbar .btn-login img {
-        filter: none;
-        margin-right: 8px;
-    }
-
-    .navbar .btn-login:hover {
-        background-color: #e0e0e0;
-    }
-
-    .navbar .btn-login:last-child {
-        border-bottom: none;
+    .menu-toggle:checked ~ .navbar {
+        display: flex;
     }
 }
 
-
 @media (max-width: 768px) {
-    .hamburger {
-        display: flex;
+    header {
+        padding: 10px 18px;
     }
+
+    .logo img {
+        height: 60px;
+    }
+
     .navbar {
         display: none;
         position: absolute;
@@ -162,9 +144,7 @@ header {
         z-index: 999;
         gap: 0;
     }
-    .menu-toggle:checked ~ .navbar {
-        display: flex;
-    }
+
     .navbar a {
         margin: 0;
         padding: 15px 20px;
@@ -172,7 +152,12 @@ header {
         text-align: center;
         border-bottom: 1px solid #ddd;
     }
+
     .navbar a:last-child {
         border-bottom: none;
+    }
+
+    .menu-toggle:checked ~ .navbar {
+        display: flex;
     }
 }

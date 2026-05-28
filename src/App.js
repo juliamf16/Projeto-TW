@@ -1,32 +1,43 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Registo from './pages/Registo';
-import Utilizadores from './pages/Utilizadores';
-import Perfil from './pages/Perfil';
-import PrivateRoute from './components/PrivateRoute';
-import './App.css';
-
+import React, { useEffect } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Apresentacao from "./components/Apresentacao";
+import Noticias from "./components/Noticias";
+import Investigacao from "./components/Investigacao";
+import Eventos from "./components/Eventos";
+import Oportunidades from "./components/Oportunidades";
+import Parceiros from "./components/Parceiros";
+import Contactos from "./components/Contactos";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+import { db } from "./js/indexeddb.js";
 
 function App() {
+    useEffect(() => {
+        db.iniciarBD()
+    });
+
     return (
-        <BrowserRouter>
-            <AuthProvider>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/registo" element={<Registo />} />
-                    <Route path="/perfil" element={<PrivateRoute><Perfil /></PrivateRoute>} />
-                    <Route path="/utilizadores" element={
-                        <PrivateRoute>
-                            <Utilizadores />
-                        </PrivateRoute>
-                    } />
-                </Routes>
-            </AuthProvider>
-        </BrowserRouter>
+        <div className="container">
+            <ScrollToTop />
+            <Header />
+            <main>
+                <Apresentacao />
+                <hr className="linebreak" />
+                <Noticias />
+                <hr className="linebreak" />
+                <Investigacao />
+                <hr className="linebreak" />
+                <Eventos />
+                <hr className="linebreak" />
+                <Parceiros />
+                <hr className="linebreak" />
+                <Oportunidades />
+                <hr className="linebreak" />
+                <Contactos />
+            </main>
+            <Footer />
+        </div>
     );
 }
 
