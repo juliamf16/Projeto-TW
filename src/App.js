@@ -1,4 +1,3 @@
-// App.js
 import React, { useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
@@ -10,35 +9,36 @@ import Oportunidades from "./components/Oportunidades";
 import Parceiros from "./components/Parceiros";
 import Contactos from "./components/Contactos";
 import Footer from "./components/Footer";
-import { db } from "./js/indexeddb"; // ajuste o caminho
+import ScrollToTop from "./components/ScrollToTop";
+import { db } from "./js/indexeddb";
 
 function App() {
-  useEffect(() => {
-    db.iniciarBD()
-  });
+    useEffect(() => {
+        db.iniciarBD()
+    });
 
-  return (
-    <div className="container">
-      <Header />
-      <main>
-        <button id="toTop" className="to-top" aria-label="Voltar ao topo da página" hidden>↑</button>
-        <Apresentacao />
-        <hr className="linebreak" />
-        <Noticias />
-        <hr className="linebreak" />
-        <Investigacao />
-        <hr className="linebreak" />
-        <Eventos />
-        <hr className="linebreak" />
-        <Parceiros />
-        <hr className="linebreak" />
-        <Oportunidades />
-        <hr className="linebreak" />
-        <Contactos />
-      </main>
-      <Footer />
-    </div>
-  );
+    return (
+        <div className="container">
+            <ScrollToTop />
+            <Header />
+            <main>
+                <Apresentacao />
+                <hr className="linebreak" />
+                <Noticias />
+                <hr className="linebreak" />
+                <Investigacao />
+                <hr className="linebreak" />
+                <Eventos />
+                <hr className="linebreak" />
+                <Parceiros />
+                <hr className="linebreak" />
+                <Oportunidades />
+                <hr className="linebreak" />
+                <Contactos />
+            </main>
+            <Footer />
+        </div>
+    );
 }
 
 export default App;

@@ -11,11 +11,11 @@ const apiKey = '6d9cf7e1077b9b62e8e5596d81e1ef66';
  */
 async function getForecastByCityAndDate(city, targetDate, targetHour) {
     const weatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&lang=pt`;
-    
+
     return fetch(weatherApiUrl)
         .then(response => response.json())
-        .then(weatherData => 
-			returnData(weatherData, targetDate, targetHour));
+        .then(weatherData =>
+            returnData(weatherData, targetDate, targetHour));
 }
 
 /**
@@ -72,32 +72,15 @@ async function obterCoordenadas(cidade) {
 
     if (data && data.length > 0) {
         let resultado = null;
-            for (const item of data) {
-                if (item.addresstype === 'city') {
-                    resultado = item;
-                    break;
-                }
+        for (const item of data) {
+            if (item.addresstype === 'city') {
+                resultado = item;
+                break;
             }
-        return {lat: resultado.lat, lon: resultado.lon };
+        }
+        return { lat: resultado.lat, lon: resultado.lon };
     }
     return null;
 }
 
-/**
- * Renderiza um mapa interativo Leaflet num contentor HTML.
- * @param {string} containerId - ID do elemento HTML que irá conter o mapa
- * @param {{lat: string|number, lon: string|number}} coords - Coordenadas centrais do mapa
- * @param {string} titulo - Título a ser exibido na popup do marcador
- * @returns {void}
- */
-function renderizarMapa(containerId, coords, titulo) {
-    const container = document.getElementById(containerId);
-
-    container.innerHTML = "";
-
-    const map = L.map(containerId).setView([coords.lat, coords.lon], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
-    L.marker([coords.lat, coords.lon]).addTo(map).bindPopup(titulo);
-}
+export { getForecastByCityAndDate, obterCoordenadas };
