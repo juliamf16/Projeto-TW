@@ -3,6 +3,17 @@ import mediaLogo from "./media/logo.png"
 import userLogo from "./media/user_logo.png"
 
 export default function Header() {
+    useEffect(() => {
+        fecharMenuHamburger();
+    }, []);
+  
+    function fecharMenuHamburger() {
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', function () {
+                document.getElementById('menu-toggle').checked = false;
+            });
+        });
+    }
     return (
         <header>
             <div className="logo">
