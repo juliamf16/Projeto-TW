@@ -44,26 +44,4 @@ router.put('/me', authMiddleware, async (req, res) => {
     }
 });
 
-// (Opcional) Ver qualquer perfil (apenas admin)
-router.get('/:id', authMiddleware, isAdmin, async (req, res) => {
-    const user = await User.findById(req.params.id).select('-password');
-    if (!user) return res.status(404).json({ message: 'Utilizador não encontrado' });
-    res.json(user);
-});
-
-// (Opcional) Editar qualquer utilizador (apenas admin)
-router.put('/:id', authMiddleware, isAdmin, async (req, res) => {
-    const { nome, email, role } = req.body;
-    try {
-        const user = await User.findById(req.params.id);
-        if (nome) user.nome = nome;
-        if (email) user.email = email;
-        if (role && ['user', 'admin'].includes(role)) user.role = role;
-        await user.save();
-        res.json({ message: 'Utilizador atualizado' });
-    } catch (err) {
-        res.status(500).json({ message: 'Erro ao atualizar' });
-    }
-});
-
 module.exports = router;

@@ -46,7 +46,6 @@ router.post('/login', async (req, res) => {
     }
 });
 
-// Obter dados do próprio utilizador (via token)
 router.get('/me', async (req, res) => {
     const authHeader = req.headers.authorization;
     if (!authHeader) return res.status(401).json({ message: 'Token não fornecido' });
