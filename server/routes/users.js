@@ -4,7 +4,7 @@ const User = require('../models/User');
 const authMiddleware = require('../middleware/auth');
 const router = express.Router();
 
-const JWT_SECRET = process.env.JWT_SECRET || 'segredo-muito-secreto';
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // Middleware para verificar se é admin
 const isAdmin = async (req, res, next) => {
