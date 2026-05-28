@@ -1,6 +1,6 @@
 import "./Header.css"
-
 import mediaLogo from "./media/logo.png"
+import userLogo from "./media/user_logo.png"
 
 export default function Header() {
     return (
@@ -11,7 +11,7 @@ export default function Header() {
 
             <input type="checkbox" id="menu-toggle" className="menu-toggle" aria-label="Abrir menu de navegação"></input>
 
-            <label for="menu-toggle" className="hamburger">
+            <label htmlFor="menu-toggle" className="hamburger">
                 <div className="hamburger-line"></div>
                 <div className="hamburger-line"></div>
                 <div className="hamburger-line"></div>
@@ -25,6 +25,9 @@ export default function Header() {
                 <a href="#parceiros">Parceiros</a>
                 <a href="#oportunidades">Oportunidades</a>
                 <a href="#contactos">Contactos</a>
+                <button className="btn-login">
+                    <img src={userLogo} alt="Logo de utilizador"></img>Iniciar sessão
+                </button>
             </nav>
         </header>
     );
