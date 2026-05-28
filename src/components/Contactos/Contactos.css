@@ -1,4 +1,4 @@
-/* ===== CONTACTOS ===== */
+﻿/* ===== CONTACTOS ===== */
 .contactos {
     margin-top: 30px;
     margin-bottom: 100px;
@@ -97,3 +97,41 @@
     min-height: 20px;
     color: red;
 }
+
+@media (max-width: 1024px) {
+    .contactos-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contactos-container {
+        grid-template-columns: 1fr;
+    }
+
+    .telemovel-group {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactos-container {
+        gap: 16px;
+    }
+
+    .contacto-mapa iframe {
+        min-height: 260px;
+    }
+
+    .contacto-form select,
+    .contacto-form input,
+    .contacto-form textarea {
+        padding: 12px;
+    }
+
+    .contacto-form button {
+        padding: 12px;
+    }
+}
+
