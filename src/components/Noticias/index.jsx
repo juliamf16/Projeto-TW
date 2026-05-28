@@ -298,8 +298,18 @@ export default function Noticias() {
                             <div className="grid-noticias">
                                 <div className="grid-box-imagem"><img src={palestra} alt="Formação" /></div>
                                 <div className="grid-box-texto">
-                                    <p>Profissionais da área da saúde participaram recentemente numa <strong>ação de formação dedicada à melhoria do funcionamento da Linha de Saúde Açores</strong>...<br /><br />
-                                        (texto completo como no original)
+                                    <p>Profissionais da área da saúde participaram recentemente numa <strong>ação de
+											formação dedicada à melhoria do funcionamento da Linha de Saúde Açores</strong>, com
+											o objetivo de reforçar a qualidade do atendimento, otimizar os processos de
+											triagem e garantir uma resposta mais eficaz às necessidades da população.<br/><br/>
+											A iniciativa reuniu médicos, enfermeiros e técnicos de atendimento,
+											abordando temas como comunicação clínica à distância, utilização de
+											protocolos de triagem e gestão segura da informação clínica. Durante a
+											sessão foram também apresentados exemplos de <strong>boas práticas no acompanhamento
+											remoto de utentes</strong>.<br/><br/>
+											O evento contou ainda com a colaboração de investigadores associados ao
+											Centro Académico Clínico dos Açores (CACA), que apresentaram o <strong>trabalho
+											desenvolvido na área da telemedicina.</strong>
                                     </p>
                                 </div>
                             </div>
@@ -315,8 +325,16 @@ export default function Noticias() {
                             <div className="grid-noticias">
                                 <div className="grid-box-imagem"><img src={poster} alt="Poster" /></div>
                                 <div className="grid-box-texto">
-                                    <p>A investigadora Joana Cabral... apresentou <strong>novos dados sobre a epidemiologia da Doença de Machado-Joseph no arquipélago.</strong><br /><br />
-                                        (texto completo como no original)
+                                    <p>     
+                                            A investigadora Joana Cabral, associada ao Centro Académico Clínico dos Açores (CACA),
+											participou recentemente num congresso internacional dedicado às doenças
+											neurológicas raras, onde apresentou <strong>novos dados sobre a epidemiologia da
+											Doença de Machado-Joseph no arquipélago.</strong><br/><br/>
+											Durante a apresentação foram discutidas estatísticas recentes que <strong>confirmam
+											os Açores como uma das regiões do mundo com maior prevalência desta doença
+											genética</strong>, estimada em cerca de 39 casos por 100 mil habitantes.<br/><br/>
+											A participação no congresso permitiu divulgar o <strong>trabalho desenvolvido no
+											âmbito da área de epidemiologia do CACA</strong>.
                                     </p>
                                 </div>
                             </div>

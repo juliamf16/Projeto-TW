@@ -13,24 +13,6 @@ import ScrollToTop from "./components/ScrollToTop";
 import { db } from "./js/indexeddb.js";
 
 function App() {
-  document.addEventListener('DOMContentLoaded', function () {
-      botaoTopo();
-
-  });
-
-function botaoTopo() {
-    const btn = document.getElementById('toTop');
-
-    function updateVisibility() {
-        btn.hidden = window.scrollY <= 300;
-    }
-    window.addEventListener('scroll', updateVisibility);
-    updateVisibility();
-
-    btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
     useEffect(() => {
         db.iniciarBD()
     });
