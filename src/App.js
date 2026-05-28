@@ -1,5 +1,5 @@
 // App.js
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Apresentacao from "./components/Apresentacao";
@@ -13,24 +13,9 @@ import Footer from "./components/Footer";
 import { db } from "./js/indexeddb"; // ajuste o caminho
 
 function App() {
-  const [dbReady, setDbReady] = useState(false);
-
   useEffect(() => {
     db.iniciarBD()
-      .then(() => {
-        console.log("Base de dados pronta");
-        setDbReady(true);
-      })
-      .catch((err) => {
-        console.error("Erro ao iniciar BD:", err);
-        // Mesmo com erro, pode mostrar a app mas a newsletter não funcionará
-        setDbReady(true);
-      });
-  }, []);
-
-  if (!dbReady) {
-    return <div>A carregar...</div>; // ou um spinner
-  }
+  });
 
   return (
     <div className="container">

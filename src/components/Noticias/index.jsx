@@ -6,6 +6,7 @@ import poster from "./media/Poster-2.png";
 
 
 import { setupDNA3D, criarEstruturaDNA, iniciarAnimacaoDNA, configurarRedimensionamentoDNA } from "./dna.jsx";
+import { db } from "../../js/indexeddb";
 
 const eEmailValido = (email) => {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,3}$/;
@@ -20,8 +21,6 @@ export const validarDadosNewsletter = (email, pais) => {
   return { valido: erros.length === 0, erros };
 };
 
-
-const db = window.db;
 
 const adicionarSubscritor = async (email, pais) => {
   return new Promise((resolve, reject) => {
@@ -204,6 +203,7 @@ export default function Noticias() {
     const resultado = validarDadosNewsletter(newsletterEmail, newsletterPais);
     const emailInput = document.querySelector(".email_newsletter");
     const paisSelect = document.querySelector(".pais_selector");
+
     if (emailInput) emailInput.style.border = "1px solid #ddd";
     if (paisSelect) paisSelect.style.border = "1px solid #ddd";
     if (!resultado.valido) {
@@ -261,7 +261,7 @@ export default function Noticias() {
       <h1 id="titulo-noticias">Notícias</h1>
 
       <div className="carrossel-noticias" aria-label="Notícias em destaque" ref={carrosselRef}>
-        <button className="carrossel-btn prev" aria-label="Notícia anterior" onClick={prevSlide} />
+        <button className="carrossel-btn prev" aria-label="Notícia anterior" onClick={prevSlide} > ❮ </button>
 
         <div className="carrossel-wrapper">
           <div className="carrossel-slides">
@@ -325,7 +325,7 @@ export default function Noticias() {
           </div>
         </div>
 
-        <button className="carrossel-btn next" aria-label="Notícia seguinte" onClick={nextSlide} />
+        <button className="carrossel-btn next" aria-label="Notícia seguinte" onClick={nextSlide}>  ❯  </button>
 
         <div className="carrossel-indicadores">
           {[0, 1, 2].map(idx => (
