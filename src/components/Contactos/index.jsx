@@ -58,6 +58,7 @@ const validarDadosContacto = (dados) => {
 };
 
 const indicativosTelefone = [
+	{ code: "+351", flag: "🇵🇹" },
 	{ code: "+93", flag: "🇦🇫" }, { code: "+355", flag: "🇦🇱" }, { code: "+213", flag: "🇩🇿" },
 	{ code: "+376", flag: "🇦🇩" }, { code: "+244", flag: "🇦🇴" }, { code: "+1264", flag: "🇦🇮" },
 	{ code: "+1268", flag: "🇦🇬" }, { code: "+54", flag: "🇦🇷" }, { code: "+374", flag: "🇦🇲" },

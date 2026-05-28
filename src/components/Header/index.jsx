@@ -1,8 +1,19 @@
 import "./Header.css"
-
+import { useEffect } from "react"
 import mediaLogo from "./media/logo.png"
 
 export default function Header() {
+    useEffect(() => {
+        fecharMenuHamburger();
+    }, []);
+  
+    function fecharMenuHamburger() {
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', function () {
+                document.getElementById('menu-toggle').checked = false;
+            });
+        });
+    }
     return (
         <header>
             <div className="logo">
@@ -11,7 +22,7 @@ export default function Header() {
 
             <input type="checkbox" id="menu-toggle" className="menu-toggle" aria-label="Abrir menu de navegação"></input>
 
-            <label for="menu-toggle" className="hamburger">
+            <label htmlFor="menu-toggle" className="hamburger">
                 <div className="hamburger-line"></div>
                 <div className="hamburger-line"></div>
                 <div className="hamburger-line"></div>
