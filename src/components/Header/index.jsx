@@ -2,11 +2,11 @@ import "./Header.css"
 
 import mediaLogo from "./media/logo.png"
 
-export default function Header(){
-    return(
+export default function Header() {
+    return (
         <header>
             <div className="logo">
-                <a href="#apresentacao"><img src={mediaLogo} alt="Centro Académico Clínico dos Açores"/></a>
+                <a href="#apresentacao"><img src={mediaLogo} alt="Centro Académico Clínico dos Açores" /></a>
             </div>
 
             <input type="checkbox" id="menu-toggle" className="menu-toggle" aria-label="Abrir menu de navegação"></input>

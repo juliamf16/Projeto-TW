@@ -4,9 +4,9 @@ import facebookLogo from "./media/fb.png"
 import instagramLogo from "./media/ig.png"
 import linkedinLogo from "./media/linkedIn.png"
 
-export default function Footer(){
-    return(
-        <footer>
+export default function Footer() {
+	return (
+		<footer>
 			<div className="footer_copyright">
 				<p>CACA © 2026</p>
 			</div>
@@ -29,12 +29,12 @@ export default function Footer(){
 				</a>
 				<p>Tecnologias Web - 2025/2026</p>
 			</div>
-			
+
 			<div className="footer_privacy">
 				<a href="https://www.google.com/" target="_blank" aria-label="Política de Privacidade (abre nova página)">
 					<p>Política de Privacidade</p>
 				</a>
 			</div>
 		</footer>
-    );
+	);
 }

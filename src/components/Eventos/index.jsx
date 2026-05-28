@@ -1,7 +1,7 @@
 import "./Eventos.css"
 
-export default function Eventos(){
-    return(
+export default function Eventos() {
+    return (
         <section id="eventos" className="eventos-section">
             <h1>Gestão de Eventos</h1>
             <div className="eventos-container">
@@ -10,9 +10,9 @@ export default function Eventos(){
                     <form id="formulario-eventos" aria-label="Formulário para adicionar ou editar eventos">
                         <div className="form-group">
                             <label htmlFor="evento-titulo">Título do Evento</label>
-                            <input 
-                                type="text" 
-                                id="evento-titulo" 
+                            <input
+                                type="text"
+                                id="evento-titulo"
                                 placeholder="Seminário de Saúde Mental"
                                 required
                                 aria-label="Título do evento"
@@ -21,8 +21,8 @@ export default function Eventos(){
 
                         <div className="form-group">
                             <label htmlFor="evento-descricao">Descrição</label>
-                            <input type="text" 
-                                id="evento-descricao" 
+                            <input type="text"
+                                id="evento-descricao"
                                 placeholder="Descreva o evento..."
                                 required
                                 aria-label="Descrição do evento"
@@ -31,9 +31,9 @@ export default function Eventos(){
 
                         <div className="form-group">
                             <label htmlFor="evento-data">Data do Evento</label>
-                            <input 
-                                type="date" 
-                                id="evento-data" 
+                            <input
+                                type="date"
+                                id="evento-data"
                                 required
                                 aria-label="Data do evento"
                             />
@@ -41,9 +41,9 @@ export default function Eventos(){
 
                         <div className="form-group">
                             <label htmlFor="evento-hora">Hora do Evento</label>
-                            <input 
-                                type="time" 
-                                id="evento-hora" 
+                            <input
+                                type="time"
+                                id="evento-hora"
                                 required
                                 aria-label="Hora do evento"
                             />
@@ -52,17 +52,17 @@ export default function Eventos(){
                         <div className="form-group">
                             <label htmlFor="local-evento">Local do Evento</label>
                             <select className="local-evento" id="evento-cidade" aria-label="Local do evento">
-                                    <option value="default">Selecione um local</option>
-                                    <option value="Ponta Delgada">Ponta Delgada</option>
-                                    <option value="Angra do Heroísmo">Angra do Heroísmo</option>
-                                    <option value="Horta">Horta</option>
+                                <option value="default">Selecione um local</option>
+                                <option value="Ponta Delgada">Ponta Delgada</option>
+                                <option value="Angra do Heroísmo">Angra do Heroísmo</option>
+                                <option value="Horta">Horta</option>
                             </select>
                         </div>
 
                         <div className="form-group">
-                            <input 
-                                type="text" 
-                                id="evento-local" 
+                            <input
+                                type="text"
+                                id="evento-local"
                                 placeholder="Auditório Principal"
                                 required
                                 aria-label="Local do evento"
