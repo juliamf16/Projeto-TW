@@ -1,5 +1,4 @@
-// PASSAR ISTO PARA .ENV NO FUTURO
-const apiKey = '6d9cf7e1077b9b62e8e5596d81e1ef66';
+const apiKey = "6d9cf7e1077b9b62e8e5596d81e1ef66";
 
 /**
  * Obtém a previsão meteorológica para uma cidade, data e hora específicas. Utiliza a API OpenWeatherMap (previsão de 5 dias com intervalos de 3 horas)

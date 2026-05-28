@@ -1,58 +1,6 @@
-html {
-    scroll-behavior: smooth;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background-color: #f2f6fc;
-    font-family: 'Source Sans 3', sans-serif;
-}
-
-img,
-video,
-canvas {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
 main {
-    margin: 50px 60px;
+    margin: 50px 100px;
     font-family: 'Source Sans 3', sans-serif;
-}
-
-@media (max-width: 1024px) {
-    main {
-        margin: 40px 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    main {
-        margin: 25px 20px;
-    }
-}
-
-.to-top {
-    position: fixed;
-    right: 16px;
-    bottom: 16px;
-    z-index: 1000;
-    width: 44px;
-    height: 44px;
-    border: 0;
-    border-radius: 50%;
-    background: #0f9d58;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 30px;
-    text-align: center;
 }
 
 .linebreak {
@@ -62,380 +10,49 @@ main {
     background: #000;
 }
 
-/* ===== MEDIA QUERIES ===== */
-@media (max-width: 1024px) {
-    .banner img {
-        height: 350px;
-    }
-
-    .grid-investigacao {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .grid-parceiros {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .oportunidades-container {
-        grid-template-columns: 1fr;
-    }
-
-    .oportunidades-content {
-        padding-right: 0px;
-    }
-
-    .contactos-container {
-        grid-template-columns: 1fr;
-    }
-
-    .contacto-info a {
-        display: block;
-    }
-
-    .contacto-info {
-        justify-items: center;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .navbar {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #f2f2f2;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 999;
-        gap: 0;
-        overflow-x: hidden;
-    }
-
-    .navbar a {
-        margin: 0;
-        padding: 15px 20px;
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .navbar a:last-child {
-        border-bottom: none;
-    }
-
-    .menu-toggle:checked~.navbar {
-        display: flex;
-    }
-
-    .noticias {
-        padding: 30px 50px;
-    }
-
-    .carrossel-btn {
-        display: none;
-    }
-
-    .grid-noticias {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .grid-box-imagem {
-        text-align: center;
-    }
-
-    .grid-box-imagem img {
-        max-width: 80%;
-        max-height: 300px;
-        margin: 0 auto;
-    }
-
-    .grid-box-texto p {
-        max-height: 300px;
-        font-size: 15px;
-    }
-
-    .carrossel-indicadores {
-        margin-top: 20px;
-    }
-
-    .indicador {
-        width: 15px;
-        height: 15px;
-    }
-
-    .newsletter-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        align-items: center;
-    }
-
-    .newsletter-logotipo3d {
-        margin: auto;
-        margin-bottom: 50px;
-    }
-
-    .oportunidades-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        align-items: center;
-    }
-
-    .oportunidades-img {
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    .oportunidades-img img {
-        margin: 20px auto;
-        width: 50%;
-        max-width: 900px;
-    }
-
-    .oportunidades-content {
-        margin: 0 auto;
-        width: 90%;
-        max-width: 800px;
-        overflow-x: auto;
-    }
-
-    table {
-        min-width: 600px;
-        margin: 0 auto;
-    }
+.toast {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 16px 20px;
+    font-family: 'Source Sans 3', sans-serif;
+    color: white;
+    z-index: 2000;
+    animation: slideUpAndDown 5s ease-in-out forwards;
+    border-radius: 5px;
 }
 
-@media (max-width: 768px) {
-    main {
-        margin: 40px 40px;
-    }
-
-    .banner img {
-        height: 300px;
-    }
-
-    .grid-investigacao {
-        grid-template-columns: 1fr;
-    }
-
-    .grid-parceiros {
-        grid-template-columns: 1fr;
-    }
-
-    .grid-parceiros img {
-        margin-top: 40px;
-        width: 40%;
-    }
-
-    .noticias {
-        padding: 20px 20px;
-    }
-
-    .grid-titulo-data {
-        grid-template-columns: 1fr;
-        gap: 5px;
-        margin-bottom: 15px;
-    }
-
-    .grid-titulo {
-        text-align: center;
-    }
-
-    .grid-data {
-        text-align: center;
-    }
-
-    .grid-noticias {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .grid-box-imagem {
-        text-align: center;
-    }
-
-    .grid-box-imagem img {
-        max-width: 100%;
-        max-height: 250px;
-        width: auto;
-    }
-
-    .grid-box-texto p {
-        font-size: 14px;
-        line-height: 1.5;
-        margin: 0;
-    }
-
-    .noticias-categoria {
-        text-align: end;
-        margin-top: 10px;
-    }
-
-    .carrossel-indicadores {
-        margin-top: 10px;
-        position: relative;
-        clear: both;
-    }
-
-    .indicador {
-        width: 8px;
-        height: 8px;
-    }
-
-    .oportunidades-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .oportunidades-img img {
-        margin: 10px auto;
-        width: 70%;
-        max-width: 600px;
-    }
-
-    .oportunidades-content {
-        margin: 0;
-        width: 100%;
-        overflow-x: auto;
-    }
-
-    .newsletter-logotipo3d {
-        width: 250px;
-        height: 250px;
-    }
-
-    table {
-        min-width: 500px;
-        font-size: 14px;
-    }
-
-    th,
-    td {
-        padding: 8px;
-    }
-
-    .contactos-container {
-        grid-template-columns: 1fr;
-    }
-
-    .contacto-info {
-        justify-items: center;
-    }
-
-    table {
-        min-width: 500px;
-    }
-
-    .eventos-container {
-        grid-template-columns: 1fr;
-    }
-
-    .evento-actions {
-        margin-top: 10px;
-    }
-
-    .form-buttons {
-        flex-direction: column;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .navbar {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #f2f2f2;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 999;
-        gap: 0;
-    }
-
-    .navbar a {
-        margin: 0;
-        padding: 15px 20px;
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .navbar a:last-child {
-        border-bottom: none;
-    }
-
-    .menu-toggle:checked~.navbar {
-        display: flex;
-    }
-
-    .grid-parceiros .grid-box.hover-ativo {
-        transform: scale(1.05);
-    }
-
-    .grid-parceiros .grid-box .parceiro-nome {
-        font-size: 13px;
-        padding: 10px 5px;
-    }
+.toast.success {
+    background-color: #0f9d58;
 }
 
-@media (max-width: 375px) {
-    main {
-        margin: 40px;
+.toast.error {
+    background-color: #eb2d2d;
+}
+
+@keyframes slideUpAndDown {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 50px);
+        /* Começa 50px abaixo */
     }
 
-    .banner img {
-        height: 200px;
+    15% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+        /* Sobe para a posição final */
     }
 
-    .oportunidades-img img {
-        width: 80%;
-        max-width: 200px;
+    85% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+        /* Mantém-se visível */
     }
 
-    table {
-        min-width: 400px;
-        font-size: 12px;
-    }
-
-    th,
-    td {
-        padding: 6px;
-    }
-
-    .carrossel-noticias {
-        padding: 0px;
-    }
-
-    .newsletter-logotipo3d {
-        width: 170px;
-        height: 170px;
-    }
-
-    .oportunidades-content {
-        text-align: center;
-        overflow-x: auto;
-    }
-
-    .grid-box-imagem img {
-        max-height: 200px;
-    }
-
-    .grid-box-texto {
-        margin-bottom: 250px;
-    }
-
-    .carrossel-indicadores {
-        margin-top: 5px;
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 50px);
+        /* Sobe ligeiramente ao sumir */
     }
 }
