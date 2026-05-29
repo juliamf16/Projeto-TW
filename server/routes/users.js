@@ -61,7 +61,7 @@ router.delete('/:id', authMiddleware, isAdmin, async (req, res) => {
     try {
         const user = await User.findById(req.params.id);
         if (!user) return res.status(404).json({ message: 'Utilizador não encontrado' });
-        // Impedir que o admin remova a si próprio (opcional, mas recomendado)
+        
         if (user._id.toString() === req.user.id) {
             return res.status(400).json({ message: 'Não pode remover a sua própria conta' });
         }
