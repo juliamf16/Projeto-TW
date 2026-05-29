@@ -196,11 +196,10 @@ PORT=5000
 
 **3. Iniciar a aplicação em desenvolvimento**
 
-Os comandos abaixo iniciam o front-end e o back-end, respetivamente:
+Os comandos abaixo iniciam o front-end e o back-end em simultâneo:
 
 ```bash
-npm start
-npm run server
+npm run dev
 ```
 
 - Front-end disponível em `http://localhost:3000`
