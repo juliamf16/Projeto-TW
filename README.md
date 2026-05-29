@@ -1,70 +1,244 @@
-# Getting Started with Create React App
+# CACA — Centro Académico Clínico dos Açores
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Website institucional do Centro Académico Clínico dos Açores, desenvolvido no âmbito da unidade curricular.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Identificação do Grupo
 
-### `npm start`
+| Nome | Número de Aluno |
+|------|----------------|
+| _Daniela Gabriel_ | _30230007_ |
+| _Hugo Raposo_ | _2024114377_ |
+| _Julia Freitas_ | _2024114388_ |
+| _Rodrigo Pires_ | _2024113717_ |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Framework Front-end e Tecnologias Back-end
 
-### `npm test`
+### Front-end
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+O front-end foi desenvolvido com **React 19**, utilizando o Create React App como base. A escolha recaiu sobre o React pela sua arquitetura baseada em componentes, o que se revelou muito adequado para um website com várias secções independentes. A navegação entre páginas é gerida pelo **React Router v7**, e as chamadas à API são feitas com **Axios**. Para funcionalidades específicas, recorremos também ao **Leaflet** (mapas interativos na secção de Contactos) e ao **Three.js** (elementos visuais 3D).
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Back-end
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O servidor é uma API REST construída com **Express 5** sobre **Node.js**. Expõe dois conjuntos de rotas — `/api/auth` para autenticação e `/api/users` para gestão de utilizadores — e liga-se à base de dados via **Mongoose**. A autenticação é baseada em tokens **JWT** e as passwords são sempre guardadas com **bcrypt**. Em desenvolvimento, o **nodemon** reinicia automaticamente o servidor a cada alteração.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Base de dados
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+A aplicação utiliza **MongoDB** para persistência no servidor (ligação via variável de ambiente `MONGODB_URI`). Para dados que fazem sentido viver no cliente como eventos geridos localmente e subscritores de newsletter optámos pelo **IndexedDB** no browser, o que também permite um funcionamento parcial sem ligação ao servidor.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Estrutura da Aplicação
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+A aplicação segue uma arquitetura cliente-servidor clássica. O front-end React corre na porta 3000 e comunica com o back-end Express na porta 5000 através de chamadas HTTP com Axios. Em desenvolvimento, o proxy configurado no `package.json` redireciona automaticamente essas chamadas, evitando problemas de CORS.
 
-## Learn More
+No front-end, o estado de autenticação é gerido centralmente pelo `AuthContext`, que disponibiliza as funções de login, registo, logout e edição de perfil a toda a aplicação. As rotas que requerem sessão iniciada são protegidas pelo componente `PrivateRoute`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+No back-end, os pedidos autenticados passam por um middleware que verifica o JWT antes de chegar às rotas. As rotas de administração verificam adicionalmente se o utilizador tem o role `admin`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+📁Projeto-TW
+└── 📁public
+    └── 📁js
+    ├── favicon.ico
+    ├── icon.png
+    ├── index.html
+    ├── manifest.json
+    ├── robots.txt
+└── 📁server
+    └── 📁config
+        ├── db.js
+    └── 📁middleware
+        ├── auth.js
+    └── 📁models
+        ├── ContactMessage.js
+        ├── User.js
+    └── 📁routes
+        ├── auth.js
+        ├── contact.js
+        ├── users.js
+    ├── server.js
+└── 📁src
+    └── 📁components
+        └── 📁Apresentacao
+            └── 📁media
+                ├── universidade.png
+            ├── Apresentacao.css
+            ├── index.jsx
+        └── 📁Contactos
+            ├── Contactos.css
+            ├── index.jsx
+        └── 📁Eventos
+            ├── Eventos.css
+            ├── eventosDB.js
+            ├── eventosHelpers.js
+            ├── index.jsx
+        └── 📁Footer
+            └── 📁media
+                ├── fb.png
+                ├── ig.png
+                ├── linkedIn.png
+            ├── Footer.css
+            ├── index.jsx
+        └── 📁Header
+            └── 📁media
+                ├── logo.png
+                ├── user_logo.png
+            ├── Header.css
+            ├── index.jsx
+        └── 📁Investigacao
+            └── 📁media
+                ├── universidade.png
+            ├── index.jsx
+            ├── Investigacao.css
+        └── 📁Login
+        └── 📁Noticias
+            └── 📁media
+                ├── palestra-2.png
+                ├── palestrante-2.png
+                ├── Poster-2.png
+            ├── dna.jsx
+            ├── index.jsx
+            ├── Noticias.css
+        └── 📁Oportunidades
+            └── 📁media
+                ├── oportunidades.jpg
+            ├── index.jsx
+            ├── Oportunidades.css
+        └── 📁Parceiros
+            └── 📁media
+                ├── HDES-2.png
+                ├── INOVA-2.png
+                ├── UAc-2.png
+                ├── USISM-2.png
+            ├── index.jsx
+            ├── Parceiros.css
+        └── 📁ScrollToTop
+            ├── index.jsx
+            ├── ScrollToTop.css
+        └── 📁Weather
+        ├── PrivateRoute.jsx
+    └── 📁context
+        ├── AuthContext.jsx
+    └── 📁js
+        ├── indexeddb.js
+    └── 📁media
+    └── 📁pages
+        ├── Home.jsx
+        ├── Login_Registo.css
+        ├── Login.jsx
+        ├── Perfil.jsx
+        ├── Registo.jsx
+        ├── Utilizadores.jsx
+    ├── App.css
+    ├── App.js
+    ├── App.test.js
+    ├── index.css
+    ├── index.js
+    ├── logo.svg
+    ├── reportWebVitals.js
+    ├── setupTests.js
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── README.md
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Funcionalidades Implementadas
 
-### Analyzing the Bundle Size
+### Secções migradas para React
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+O website original foi reestruturado em componentes React independentes: Apresentação, Notícias, Investigação, Eventos, Parceiros, Oportunidades, Contactos, Header e Footer. O header inclui um menu hamburger responsivo para dispositivos móveis, implementado em CSS.
 
-### Making a Progressive Web App
+### API de gestão de utilizadores (nova)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+| Endpoint | Método | Acesso |
+|----------|--------|--------|
+| `/api/auth/register` | POST | Público |
+| `/api/auth/login` | POST | Público |
+| `/api/auth/me` | GET | Autenticado |
+| `/api/users` | GET | Admin |
+| `/api/users/me` | GET | Autenticado |
+| `/api/users/me` | PUT | Autenticado |
 
-### Advanced Configuration
+O sistema de roles distingue `user` (padrão) de `admin`. O primeiro utilizador a registar-se recebe automaticamente o role de administrador, sem necessidade de configuração manual.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Gestão de eventos e newsletter (IndexedDB)
 
-### Deployment
+Os eventos podem ser criados, editados e removidos diretamente no browser, com persistência via IndexedDB. A subscrição de newsletter também é guardada localmente, com os dados do subscritor e data de subscrição.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Como Correr a Aplicação
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Pré-requisitos:** Node.js v18 ou superior, npm, e uma instância MongoDB (local ou MongoDB Atlas).
+
+**1. Instalar dependências**
+
+```bash
+npm install axios bcrypt cors dotenv express jsonwebtoken leaflet mongoose nodemon react-dom react-router-dom react-scripts react three web-vitals
+```
+
+**2. Criar o ficheiro `.env` na raiz do projeto**
+
+```env
+MONGODB_URI=mongodb+srv://<utilizador>:<password>@<cluster>.mongodb.net/<nome-bd>
+JWT_SECRET=uma_chave_secreta_forte_aqui
+PORT=5000
+```
+
+**3. Iniciar a aplicação em desenvolvimento**
+
+Em package.json alterar o scripts para:
+
+```bash
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "server": "nodemon server/server.js",
+    "dev": "concurrently "npm start" "npm run server"",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
+```
+
+Os comandos abaixo iniciam o front-end e o back-end em simultâneo:
+
+```bash
+npm run dev
+```
+
+- Front-end disponível em `http://localhost:3000`
+- Back-end disponível em `http://localhost:5000`
+
+
+## Decisões de Design e Implementação
+
+A decisão de centralizar a autenticação no `AuthContext` veio da necessidade de vários componentes precisarem saber se existe sessão ativa. Colocar esse estado num contexto global foi a solução mais limpa.
+
+A escolha do IndexedDB em vez de `localStorage` para os eventos deve-se ao facto de o IndexedDB suportar estruturas de dados mais complexas e permitir consultas indexadas, o que facilita ordenação por data ou título sem carregar tudo para memória.
+
+Um desafio foi garantir que o IndexedDB estivesse inicializado antes de qualquer operação com eventos. Resolvemos isso com uma função `ensureDB` que aguarda a ligação antes de executar qualquer operação, evitando condições de corrida.
+
+---
+
+## Acessibilidade, Responsividade e Segurança
+
+Em termos de **acessibilidade**, todas as imagens têm atributos `alt` descritivos, o menu de navegação inclui `aria-label` para leitores de ecrã, e a estrutura do documento usa elementos semânticos HTML5 (`<header>`, `<main>`, `<nav>`, `<footer>`).
+
+Quanto à **responsividade**, o layout adapta-se a diferentes tamanhos de ecrã. O menu hamburger para dispositivos móveis foi implementado exclusivamente em CSS (usando um `checkbox` oculto), sem dependência de JavaScript para a interação.
+
+No que diz respeito à **segurança**, as passwords nunca são guardadas em texto simples — são sempre processadas com `bcrypt` antes de chegarem à base de dados. Os tokens JWT expiram ao fim de 2 horas. As variáveis sensíveis (URI da base de dados e segredo JWT) estão isoladas no `.env`, que está excluído do repositório via `.gitignore`. As respostas da API nunca incluem o campo `password` nos objetos de utilizador retornados.
+
+---
+
+## APIs Externas Utilizadas
+
+**Leaflet** (`leaflet ^1.9.4`) — biblioteca open-source para mapas interativos. Foi integrada no componente `Contactos` para apresentar a localização do centro num mapa embebido, instalada via npm sem necessidade de chave de API.
