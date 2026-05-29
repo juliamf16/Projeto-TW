@@ -198,6 +198,7 @@ PORT=5000
 
 Em package.json alterar o scripts para:
 
+```bash
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -206,6 +207,7 @@ Em package.json alterar o scripts para:
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   }
+```
 
 Os comandos abaixo iniciam o front-end e o back-end em simultâneo:
 
