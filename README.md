@@ -8,10 +8,10 @@ Website institucional do Centro Académico Clínico dos Açores, desenvolvido no
 
 | Nome | Número de Aluno |
 |------|----------------|
-| _Daniela Gabriel_ | _(Nº de aluno)_ |
+| _Daniela Gabriel_ | _30230007_ |
 | _Hugo Raposo_ | _2024114377_ |
 | _Julia Freitas_ | _2024114388_ |
-| _Rodrigo Pires_ | _(Nº de aluno)_ |
+| _Rodrigo Pires_ | _2024113717_ |
 
 ---
 
