@@ -191,7 +191,7 @@ export default function Eventos() {
                             </div>
                             <div className="form-group">
                                 <label htmlFor="cidade">Cidade</label>
-                                <select id="cidade" value={formData.cidade} onChange={handleInputChange} required>
+                                <select id="cidade" className="local-evento" value={formData.cidade} onChange={handleInputChange} required>
                                     <option value="">Selecione</option>
                                     <option value="Ponta Delgada">Ponta Delgada</option>
                                     <option value="Angra do Heroísmo">Angra do Heroísmo</option>
