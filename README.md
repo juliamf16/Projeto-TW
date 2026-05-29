@@ -183,7 +183,7 @@ Os eventos podem ser criados, editados e removidos diretamente no browser, com p
 **1. Instalar dependências**
 
 ```bash
-npm install
+npm install axios bcrypt cors dotenv express jsonwebtoken leaflet mongoose nodemon react-dom react-router-dom react-scripts react three web-vitals
 ```
 
 **2. Criar o ficheiro `.env` na raiz do projeto**
