@@ -51,18 +51,30 @@ export const AuthProvider = ({ children }) => {
 
     const getAllUsers = async () => {
         const res = await axios.get('/api/users');
+        return res.data.map(user => ({ ...user, id: user._id }));
+    };
+
+    const updateUser = async (id, data) => {
+        const res = await axios.put(`/api/users/${id}`, data);
+        return res.data;
+    };
+
+    const deleteUser = async (id) => {
+        const res = await axios.delete(`/api/users/${id}`);
         return res.data;
     };
 
     return (
-        <AuthContext.Provider value={{ 
-            user, 
-            loading, 
-            register, 
-            login, 
-            logout, 
-            updateProfile, 
-            getAllUsers 
+        <AuthContext.Provider value={{
+            user,
+            loading,
+            register,
+            login,
+            logout,
+            updateProfile,
+            getAllUsers,
+            updateUser,
+            deleteUser
         }}>
             {children}
         </AuthContext.Provider>

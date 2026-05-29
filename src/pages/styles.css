@@ -1,0 +1,300 @@
+.login-header {
+    background-color: #f2f6fc;
+    border-bottom: 1px solid #000000;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+.login-header .logo img {
+    height: 70px;
+    margin-top: 10px;
+}
+
+.login-page {
+    background-image: url('../components/Apresentacao/media/universidade.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Source Sans 3', sans-serif;
+    padding: 20px;
+    min-height: calc(100vh - 207px);
+}
+
+.login-box {
+    background: white;
+    border-radius: 16px;
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-page h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #0a5593;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.login-page input {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    background-color: white;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+.login-page input:focus {
+    border-color: #1c75bc;
+    box-shadow: 0 0 0 3px rgba(28, 117, 188, 0.15);
+}
+
+.login-page input::placeholder {
+    color: #aaa;
+}
+
+.login-page button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 5px;
+}
+
+.login-page button[type="submit"]:hover {
+    background-color: rgb(0, 68, 124);
+}
+
+.login-page p {
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-page p a {
+    color: #1c75bc;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-page p a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Perfil e Utilizadores ===== */
+.perfil-page,
+.utilizadores-page {
+    background-image: url('../components/Apresentacao/media/universidade.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Source Sans 3', sans-serif;
+    padding: 20px;
+    min-height: calc(100vh - 207px);
+}
+
+.perfil-box,
+.utilizadores-box {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-box h2,
+.utilizadores-box h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #0a5593;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.perfil-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.perfil-box input {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    background-color: white;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.perfil-box input:focus {
+    border-color: #1c75bc;
+    box-shadow: 0 0 0 3px rgba(28, 117, 188, 0.15);
+}
+
+.perfil-box input::placeholder {
+    color: #aaa;
+}
+
+.perfil-box button {
+    width: 100%;
+    padding: 15px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.perfil-box button:hover {
+    background-color: rgb(0, 68, 124);
+}
+
+/* Lista de utilizadores (admin) */
+.utilizadores-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.utilizadores-box li {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.utilizadores-box li strong {
+    color: #0a5593;
+}
+
+.welcome-message {
+    background: #e8f0fe;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #0a5593;
+}
+
+.admin-actions {
+    margin-top: 8px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-editar-user,
+.btn-remover-user {
+    padding: 4px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.btn-editar-user {
+    background-color: #0f9d58;
+    color: white;
+}
+
+.btn-editar-user:hover {
+    background-color: #0c7c45;
+}
+
+.btn-remover-user {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-remover-user:hover {
+    background-color: #c82333;
+}
+
+.edit-modal {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.edit-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.edit-modal input,
+.edit-modal select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.edit-buttons button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.edit-buttons button[type="submit"] {
+    background-color: #0f9d58;
+    color: white;
+}
+
+.edit-buttons button[type="button"] {
+    background-color: #6c757d;
+    color: white;
+}

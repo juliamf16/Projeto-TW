@@ -1,4 +1,4 @@
-import "./Login_Registo.css";
+import "./styles.css";
 import mediaLogo from "../components/Header/media/logo.png";
 import Footer from "../components/Footer";
 
@@ -28,7 +28,7 @@ export default function Registo() {
         <>
             <header className="login-header">
                 <div className="logo">
-                    <img src={mediaLogo} alt="Centro Académico Clínico dos Açores" />
+                    <Link to="/"><img src={mediaLogo} alt="Centro Académico Clínico dos Açores" /></Link>
                 </div>
             </header>
 
