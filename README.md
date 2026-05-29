@@ -196,6 +196,17 @@ PORT=5000
 
 **3. Iniciar a aplicação em desenvolvimento**
 
+Em package.json alterar o scripts para:
+
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "server": "nodemon server/server.js",
+    "dev": "concurrently "npm start" "npm run server"",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
+
 Os comandos abaixo iniciam o front-end e o back-end em simultâneo:
 
 ```bash
