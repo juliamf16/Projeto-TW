@@ -36,7 +36,7 @@ router.put('/me', authMiddleware, async (req, res) => {
         const user = await User.findById(req.user.id);
         if (nome) user.nome = nome;
         if (email) user.email = email;
-        if (password) user.password = password; // será hasheado pelo pre-save
+        if (password) user.password = password;
         await user.save();
         res.json({ message: 'Perfil atualizado', user: { id: user._id, nome: user.nome, email: user.email, role: user.role } });
     } catch (err) {
